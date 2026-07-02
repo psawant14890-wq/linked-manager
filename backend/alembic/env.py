@@ -7,7 +7,7 @@ from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import async_engine_from_config
 
 from app.config import get_settings
-from app.database import Base
+from app.database import Base, get_connect_args
 from app.models import *  # noqa: F401,F403 -- imports every model so autogenerate sees the full schema
 
 config = context.config
@@ -39,12 +39,11 @@ def do_run_migrations(connection: Connection) -> None:
 
 
 async def run_migrations_online() -> None:
-    connect_args = {"ssl": True} if settings.DB_SSL_REQUIRE else {}
     connectable = async_engine_from_config(
         config.get_section(config.config_ini_section, {}),
         prefix="sqlalchemy.",
         poolclass=pool.NullPool,
-        connect_args=connect_args,
+        connect_args=get_connect_args(),
     )
 
     async with connectable.connect() as connection:
