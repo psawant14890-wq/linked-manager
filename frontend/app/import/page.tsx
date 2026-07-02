@@ -49,14 +49,14 @@ export default function ImportPage() {
       <h1 className="font-display text-2xl font-semibold">Import your LinkedIn data</h1>
       <p className="mt-2 text-sm text-muted-foreground">
         Go to LinkedIn → Settings & Privacy → Data privacy → Get a copy of your data, request the full
-        export, and upload the resulting zip (or individual CSVs) here. This never touches LinkedIn's API
+        export, and upload the resulting zip (or individual CSVs) here. This never touches LinkedIn&apos;s API
         directly -- it only reads the export LinkedIn already gives you.
       </p>
 
       <Card className="mt-6">
         <CardHeader>
           <CardTitle>Upload export</CardTitle>
-          <CardDescription>Accepts a .zip from LinkedIn's export, or individual Messages/Shares/Connections .csv files.</CardDescription>
+          <CardDescription>Accepts a .zip from LinkedIn&apos;s export, or individual Messages/Shares/Connections .csv files.</CardDescription>
         </CardHeader>
         <CardContent>
           <div

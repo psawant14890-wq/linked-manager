@@ -31,8 +31,8 @@ export default function AnalyticsPage() {
         <h1 className="font-display text-2xl font-semibold">Analytics</h1>
         <p className="mt-4 text-sm text-muted-foreground">
           No data yet. Import your LinkedIn export to see posting frequency, top posts, and message
-          breakdowns. If your export didn't include post-level view/like counts, you can also upload
-          LinkedIn's separate post-analytics CSV from your account's analytics export.
+          breakdowns. If your export didn&apos;t include post-level view/like counts, you can also upload
+          LinkedIn&apos;s separate post-analytics CSV from your account&apos;s analytics export.
         </p>
       </div>
     );
