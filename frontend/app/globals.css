@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm paper background, deep ink text -- a calm, editorial base so
+       the priority-color system (below) is the only thing that pops. */
+    --background: 40 33% 97%;
+    --foreground: 30 8% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 30 8% 12%;
+
+    --border: 40 20% 88%;
+    --ring: 225 40% 29%;
+
+    --primary: 225 40% 29%;       /* deep indigo -- primary actions */
+    --primary-foreground: 0 0% 100%;
+
+    --muted: 40 25% 93%;
+    --muted-foreground: 36 6% 40%;
+
+    --accent: 35 64% 46%;          /* warm gold -- sparing use, CTAs/highlights */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 8 60% 48%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* The priority rail -- one consistent 5-color scale used everywhere
+       a message/category needs to signal its weight. */
+    --priority-recruiter: 35 64% 46%;      /* gold */
+    --priority-collaboration: 168 32% 35%; /* teal */
+    --priority-genuine: 225 40% 29%;       /* indigo (matches primary) */
+    --priority-general: 36 8% 58%;         /* neutral warm gray */
+    --priority-spam: 8 50% 48%;            /* rust */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222 32% 9%;
+    --foreground: 40 20% 92%;
+
+    --card: 222 28% 12%;
+    --card-foreground: 40 20% 92%;
+
+    --border: 222 18% 20%;
+    --ring: 35 64% 56%;
+
+    --primary: 35 64% 56%;
+    --primary-foreground: 222 32% 9%;
+
+    --muted: 222 20% 16%;
+    --muted-foreground: 36 10% 65%;
+
+    --accent: 35 64% 56%;
+    --accent-foreground: 222 32% 9%;
+
+    --destructive: 8 60% 58%;
+    --destructive-foreground: 0 0% 100%;
+
+    --priority-recruiter: 35 64% 56%;
+    --priority-collaboration: 168 32% 50%;
+    --priority-genuine: 217 60% 70%;
+    --priority-general: 36 8% 55%;
+    --priority-spam: 8 55% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "cv11", "ss01";
+  }
+}
+
+/* Numeric/data text -- stats, timestamps, scores -- always use the mono
+   face so they read as "data" distinct from prose, per the type system. */
+.font-data {
+  @apply font-mono tabular-nums;
+}
